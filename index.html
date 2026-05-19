@@ -27,9 +27,9 @@
             border-bottom: 1px solid #eaeef3;
             position: relative;
         }
-        .nav-left { display: flex; gap: 28px; flex: 1; justify-content: flex-start; }
+        .nav-left { display: flex; gap: 40px; flex: 1; justify-content: flex-start; }
         .nav-center { flex-shrink: 0; text-align: center; }
-        .nav-right { display: flex; gap: 28px; flex: 1; justify-content: flex-end; align-items: center; }
+        .nav-right { display: flex; gap: 40px; flex: 1; justify-content: flex-end; align-items: center; }
         .nav-links a {
             text-decoration: none;
             font-weight: 500;
@@ -206,7 +206,7 @@
         .img-dot.active-img { background: #000; width: 24px; border-radius: 12px; }
         
         .model-info {
-            padding: 20px 24px 28px;
+            padding: 20px 24px 0px;
         }
         .model-info h3 {
             font-size: 1.8rem;
@@ -222,7 +222,34 @@
             color: #555;
             font-size: 0.95rem;
             line-height: 1.5;
-            margin-bottom: 24px;
+            margin-bottom: 16px;
+        }
+        
+        /* Выбор размера */
+        .size-selector {
+            margin: 16px 0;
+            padding: 0 24px;
+        }
+        .size-selector label {
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+        .size-selector select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #ddd;
+            border-radius: 40px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            background: white;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .size-selector select:hover {
+            border-color: #000;
         }
         
         .model-indicator {
@@ -277,12 +304,14 @@
         }
         .close-modal:hover { background: rgba(0,0,0,0.7); }
         
+        /* Корзина */
         .cart-header { padding: 24px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; }
         .cart-items { flex: 1; overflow-y: auto; padding: 20px; }
         .cart-item { display: flex; gap: 16px; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid #f0f0f0; }
         .cart-item-img { width: 80px; height: 80px; background: #f4f6fa; border-radius: 16px; background-size: cover; background-position: center; }
         .cart-item-info { flex: 1; }
         .cart-item-title { font-weight: 600; font-size: 1rem; margin-bottom: 4px; }
+        .cart-item-size { font-size: 0.8rem; color: #888; margin-top: 4px; }
         .cart-item-price { color: #888; font-size: 0.9rem; }
         .cart-item-remove { background: none; border: none; cursor: pointer; color: #999; font-size: 20px; padding: 0 8px; transition: 0.2s; }
         .cart-item-remove:hover { color: #e53935; }
@@ -318,7 +347,8 @@
         .btn { display: inline-block; padding: 18px 36px; border-radius: 50px; text-decoration: none; font-weight: 600; transition: 0.3s; }
         .btn-primary { background: #000; color: #fff; border: 1px solid #000; }
         .btn-outline { border: 1px solid #ddd; color: #000; margin-left: 15px; background: transparent; }
-        .hero-visual { flex: 1; background: #f4f6fa; border-radius: 32px; min-height: 480px; background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600"%3E%3Ccircle cx="400" cy="300" r="140" fill="%23E8ECF2"/%3E%3Cpath d="M400 160 L490 300 L400 440 L310 300Z" fill="%23D0D6E0"/%3E%3Crect x="360" y="250" width="80" height="100" rx="8" fill="%23BEC5D1"/%3E%3C/svg%3E'); background-size: cover; }
+        /* Удален hero-visual, так как фотографию убрали */
+        
         .about-grid { display: flex; gap: 48px; align-items: center; }
         .about-text p { font-size: 1.2rem; line-height: 1.5; color: #3a3a3a; margin-bottom: 24px; }
         .about-highlight { font-weight: 600; border-left: 4px solid #000; padding-left: 20px; }
@@ -458,7 +488,17 @@
 </header>
 
 <main>
-    <section class="hero"><div class="container hero-grid"><div class="hero-content"><div class="hero-badge" style="background:#f0f0f0; display:inline-block; padding:6px 18px; border-radius:40px; font-size:13px; margin-bottom:20px;">Сезон 2026</div><h1 class="hero-title">Одежда, <span>в которой живут</span></h1><p class="hero-desc">Стиль, премиум-качество, индивидуальный подход. Создано в России.</p><div class="btn-group"><a href="#" class="btn btn-primary">📱 Написать нам</a><a href="#" class="btn btn-outline">✈️ Telegram</a></div></div><div class="hero-visual"></div></div></section>
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <div class="hero-badge" style="background:#f0f0f0; display:inline-block; padding:6px 18px; border-radius:40px; font-size:13px; margin-bottom:20px;">Сезон 2026</div>
+                <h1 class="hero-title">Одежда, <span>в которой живут</span></h1>
+                <p class="hero-desc">Стиль, премиум-качество, индивидуальный подход. Создано в России.</p>
+                <div class="btn-group"><a href="#" class="btn btn-primary">📱 Написать нам</a><a href="#" class="btn btn-outline">✈️ Telegram</a></div>
+            </div>
+            <!-- hero-visual удален по заданию -->
+        </div>
+    </section>
 
     <section id="about"><div class="container"><h2 class="section-title">О бренде</h2><div class="about-grid"><div class="about-text"><p>OUR CLUB — это не просто одежда, а философия комфорта и бескомпромиссного качества.</p><p class="about-highlight">Индивидуальный пошив, ограниченные коллекции — основа нашего ДНК.</p><p>Каждый предмет гардероба проходит строгий контроль.</p></div><div class="about-image"></div></div></div></section>
 
@@ -470,7 +510,16 @@
         </div>
     </section>
 
-    <section id="reviews"><div class="container"><h2 class="section-title">Отзывы</h2><div class="reviews-grid"><div class="review-card"><p class="review-text">“Качество на высоте! Стала фанатом.”</p><p class="review-author">— Анна К.</p></div><div class="review-card"><p class="review-text">“Премиум за адекватные деньги. Рекомендую!”</p><p class="review-author">— Дмитрий В.</p></div><div class="review-card"><p class="review-text">“Индивидуальный подход, минимализм.”</p><p class="review-author">— Екатерина С.</p></div></div></div></section>
+    <section id="reviews">
+        <div class="container">
+            <h2 class="section-title">Отзывы</h2>
+            <div class="reviews-grid">
+                <div class="review-card"><p class="review-text">“Отличное качество! Вещи сидят идеально. Доставка быстрая. Рекомендую!”</p><p class="review-author">— Иван П.</p></div>
+                <div class="review-card"><p class="review-text">“Бренд с душой. Уже купил три вещи. Качество на высоте.”</p><p class="review-author">— Мария С.</p></div>
+                <div class="review-card"><p class="review-text">“Очень стильно и комфортно. Темный Друн — моя новая любовь.”</p><p class="review-author">— Артем К.</p></div>
+            </div>
+        </div>
+    </section>
 
     <section id="contacts"><div class="container"><h2 class="section-title">Свяжитесь с нами</h2><div class="contact-form"><form action="#"><div class="form-group"><input type="text" placeholder="Ваше имя" required></div><div class="form-group"><input type="email" placeholder="Email или Telegram" required></div><div class="form-group"><textarea rows="4" placeholder="Ваш вопрос"></textarea></div><button type="submit" class="btn-dark">Отправить сообщение</button></form></div></div></section>
 </main>
@@ -509,7 +558,7 @@
 </div>
 
 <script>
-    // Функция проверки загрузки изображений с подстановкой заглушки
+    // Функция проверки загрузки изображений
     function setupImageWithFallback(element, url) {
         if (!element) return;
         const testImg = new Image();
@@ -527,36 +576,37 @@
     function acceptConsent() { setCookie('userConsent', 'accepted', 365); document.getElementById('consentBanner').classList.remove('show'); }
     function declineConsent() { setCookie('userConsent', 'declined', 365); document.getElementById('consentBanner').classList.remove('show'); }
 
-    // Данные товаров с правильными путями к папке images/
+    // Обновленные названия моделей
     const categories = [
         { id: 0, name: "Футболки", basePrice: 3200, baseDesc: "100% хлопок, тематический принт.", mainImage: "images/f.1.png",
           models: [
-            { name: "Футболка с замком", price: 3200, desc: "Темный принт замка на груди", images: ["images/f.1.1.png", "images/f.1.2.png"] },
-            { name: "Футболка с мечом", price: 3500, desc: "Принт меча, черный оверсайз", images: ["images/f.2.1.png", "images/f.2.2.png"] },
-            { name: "Футболка с крестом", price: 3400, desc: "Минималистичный крест, мягкая ткань", images: ["images/f.3.1.png", "images/f.3.2.png"] }
+            { name: "Темное царство", price: 3200, desc: "Темный принт замка на груди", images: ["images/f.1.1.png", "images/f.1.2.png"] },
+            { name: "Меч смерти", price: 3500, desc: "Принт меча, черный оверсайз", images: ["images/f.2.1.png", "images/f.2.2.png"] },
+            { name: "OurClub", price: 3400, desc: "Минималистичный крест, мягкая ткань", images: ["images/f.3.1.png", "images/f.3.2.png"] }
           ] },
         { id: 1, name: "Зип-Худи", basePrice: 6500, baseDesc: "Уютная толстовка на молнии.", mainImage: "images/h.1.png",
           models: [
-            { name: "Худи с крестом", price: 6500, desc: "Серый меланж, вышитый крест на спине", images: ["images/h.1.1.png", "images/h.1.2.png"] },
-            { name: "Худи с мечом", price: 6900, desc: "Черный, принт меча на рукаве", images: ["images/h.2.1.png", "images/h.2.2.png"] },
-            { name: "Худи с мехом", price: 6700, desc: "Песочный цвет, отделка искусственным мехом", images: ["images/h.3.1.png", "images/h.3.2.png"] }
+            { name: "Кросс", price: 6500, desc: "Серый меланж, вышитый крест на спине", images: ["images/h.1.1.png", "images/h.1.2.png"] },
+            { name: "Меч ангела", price: 6900, desc: "Черный, принт меча на рукаве", images: ["images/h.2.1.png", "images/h.2.2.png"] },
+            { name: "Тундра", price: 6700, desc: "Песочный цвет, отделка искусственным мехом", images: ["images/h.3.1.png", "images/h.3.2.png"] }
           ] },
         { id: 2, name: "Джинсы", basePrice: 5990, baseDesc: "Эксклюзивный деним, уникальный дизайн.", mainImage: "images/d.1.png",
           models: [
-            { name: "Джинсы Белый огонь", price: 5990, desc: "Синие джинсы с огненным принтом", images: ["images/d.1.1.png", "images/d.1.2.png"] },
-            { name: "Джинсы рваные колени", price: 6290, desc: "Черный деним, рваные вставки", images: ["images/d.2.1.png", "images/d.2.2.png"] },
-            { name: "Джинсы Белые полосы", price: 6100, desc: "Светлый деним, белые полосы по бокам", images: ["images/d.3.1.png", "images/d.3.2.png"] }
+            { name: "Вайтфаер", price: 5990, desc: "Синие джинсы с огненным принтом", images: ["images/d.1.1.png", "images/d.1.2.png"] },
+            { name: "Вайперы", price: 6290, desc: "Черный деним, рваные вставки", images: ["images/d.2.1.png", "images/d.2.2.png"] },
+            { name: "Стрит свэг", price: 6100, desc: "Светлый деним, белые полосы по бокам", images: ["images/d.3.1.png", "images/d.3.2.png"] }
           ] },
         { id: 3, name: "Шорты", basePrice: 3200, baseDesc: "Комфортные шорты для активного отдыха.", mainImage: "images/s.1.png",
           models: [
-            { name: "Звездные шорты", price: 3200, desc: "Хлопковые шорты с вышивкой звезд, свободный крой", images: ["images/s.1.1.png", "images/s.1.2.png"] }
+            { name: "Звездопад", price: 3200, desc: "Хлопковые шорты с вышивкой звезд, свободный крой", images: ["images/s.1.1.png", "images/s.1.2.png"] }
           ] }
     ];
 
-    let cart = [];
+    let cart = []; // каждый элемент: { ...model, size: string }
     let currentCategory = null;
     let currentModelIdx = 0;
     let currentImageIdx = 0;
+    let currentSelectedSize = "M"; // размер по умолчанию
 
     function updateCartUI() {
         document.getElementById('cartCount').innerText = cart.length;
@@ -570,13 +620,13 @@
                     <div class="cart-item-img" id="cartImg_${idx}" style="background-size: cover; background-position: center;"></div>
                     <div class="cart-item-info">
                         <div class="cart-item-title">${item.name}</div>
+                        <div class="cart-item-size">Размер: ${item.size}</div>
                         <div class="cart-item-price">${item.price.toLocaleString()} ₽</div>
                     </div>
                     <button class="cart-item-remove" data-index="${idx}">🗑️</button>
                 </div>
             `).join('');
             document.querySelectorAll('.cart-item-remove').forEach(btn => btn.addEventListener('click', (e) => { cart.splice(parseInt(btn.dataset.index), 1); updateCartUI(); }));
-            // Устанавливаем картинки в корзине с проверкой
             cart.forEach((item, idx) => {
                 const imgElement = document.getElementById(`cartImg_${idx}`);
                 if (imgElement) setupImageWithFallback(imgElement, item.images[0]);
@@ -584,9 +634,12 @@
         }
     }
     
-    function addToCart(model) { cart.push({ ...model, images: [...model.images] }); updateCartUI(); }
+    function addToCart(model, size) { 
+        cart.push({ ...model, images: [...model.images], size: size }); 
+        updateCartUI(); 
+    }
 
-    function renderProductCard(model, imageIndex, modelsArray, currentModelIdx) {
+    function renderProductCard(model, imageIndex, modelsArray, currentModelIdx, selectedSize) {
         return `
             <div class="image-carousel" id="imageCarousel">
                 <button class="img-nav-btn img-prev" id="imgPrevBtn">‹</button>
@@ -603,6 +656,20 @@
                 <div class="model-price">${model.price.toLocaleString()} ₽</div>
                 <div class="model-desc">${model.desc}</div>
             </div>
+            <div class="size-selector">
+                <label>Выберите размер:</label>
+                <select id="sizeSelect">
+                    <option value="XS" ${selectedSize === 'XS' ? 'selected' : ''}>XS</option>
+                    <option value="S" ${selectedSize === 'S' ? 'selected' : ''}>S</option>
+                    <option value="M" ${selectedSize === 'M' ? 'selected' : ''}>M</option>
+                    <option value="L" ${selectedSize === 'L' ? 'selected' : ''}>L</option>
+                    <option value="XL" ${selectedSize === 'XL' ? 'selected' : ''}>XL</option>
+                    <option value="2XL" ${selectedSize === '2XL' ? 'selected' : ''}>2XL</option>
+                    <option value="3XL" ${selectedSize === '3XL' ? 'selected' : ''}>3XL</option>
+                    <option value="4XL" ${selectedSize === '4XL' ? 'selected' : ''}>4XL</option>
+                    <option value="5XL" ${selectedSize === '5XL' ? 'selected' : ''}>5XL</option>
+                </select>
+            </div>
             <div class="model-indicator" id="modelIndicator">
                 ${modelsArray.map((_, i) => `<div class="model-dot ${i === currentModelIdx ? 'active-model' : ''}" data-model-idx="${i}"></div>`).join('')}
             </div>
@@ -614,6 +681,7 @@
         currentCategory = category;
         currentModelIdx = startModelIdx;
         currentImageIdx = startImageIdx;
+        currentSelectedSize = "M"; // сброс при открытии
         updateModalContent();
         document.getElementById('productModal').classList.add('open');
         document.getElementById('overlay').classList.add('open');
@@ -623,7 +691,7 @@
         const container = document.getElementById('productCardContainer');
         const models = currentCategory.models;
         const model = models[currentModelIdx];
-        container.innerHTML = renderProductCard(model, currentImageIdx, models, currentModelIdx);
+        container.innerHTML = renderProductCard(model, currentImageIdx, models, currentModelIdx, currentSelectedSize);
         
         setTimeout(() => {
             const track = document.getElementById('imageTrack');
@@ -631,8 +699,16 @@
             const prevBtn = document.getElementById('imgPrevBtn');
             const nextBtn = document.getElementById('imgNextBtn');
             const images = currentCategory.models[currentModelIdx].images;
+            const sizeSelect = document.getElementById('sizeSelect');
             
-            // Устанавливаем картинки в слайды с проверкой
+            // Сохраняем выбранный размер при изменении
+            if (sizeSelect) {
+                sizeSelect.addEventListener('change', (e) => {
+                    currentSelectedSize = e.target.value;
+                });
+            }
+            
+            // Устанавливаем картинки в слайды
             images.forEach((img, idx) => {
                 const slideImg = document.getElementById(`slideImg_${idx}`);
                 if (slideImg) setupImageWithFallback(slideImg, img);
@@ -694,7 +770,10 @@
             if (addBtn) {
                 const newAddBtn = addBtn.cloneNode(true);
                 addBtn.parentNode.replaceChild(newAddBtn, addBtn);
-                newAddBtn.addEventListener('click', () => addToCart(currentCategory.models[currentModelIdx]));
+                newAddBtn.addEventListener('click', () => {
+                    const selectedSize = document.getElementById('sizeSelect')?.value || 'M';
+                    addToCart(currentCategory.models[currentModelIdx], selectedSize);
+                });
             }
         }, 10);
         
@@ -705,6 +784,7 @@
                 newDot.addEventListener('click', (e) => {
                     currentModelIdx = parseInt(e.target.dataset.modelIdx);
                     currentImageIdx = 0;
+                    currentSelectedSize = "M";
                     updateModalContent();
                 });
             });
@@ -722,6 +802,7 @@
         if (direction === 'next') currentModelIdx = (currentModelIdx + 1) % models.length;
         else currentModelIdx = (currentModelIdx - 1 + models.length) % models.length;
         currentImageIdx = 0;
+        currentSelectedSize = "M";
         updateModalContent();
     }
     
@@ -734,7 +815,6 @@
             return `<div class="product-card" data-cat-id="${cat.id}"><div class="product-img" id="mainImg_${cat.id}" style="background-size: cover; background-position: center;"></div><div class="product-info"><h3>${cat.name}</h3><div class="product-price">от ${minPrice.toLocaleString()} ₽</div><p class="product-desc">${cat.baseDesc}</p><span class="product-link">Выбрать модель →</span></div></div>`;
         }).join('');
         
-        // Устанавливаем главные изображения с проверкой
         categories.forEach(cat => {
             const imgElement = document.getElementById(`mainImg_${cat.id}`);
             if (imgElement) setupImageWithFallback(imgElement, cat.mainImage);
@@ -766,7 +846,6 @@
     
     document.querySelectorAll('a[href^="#"]').forEach(anchor => anchor.addEventListener('click', function(e) { const href = this.getAttribute('href'); if(href === "#" || href === "") return; const target = document.querySelector(href); if(target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); } }));
     
-    // Установка логотипа с проверкой
     const logoImg = document.querySelector('.logo-img');
     if (logoImg) {
         const logoUrl = logoImg.src;
@@ -776,7 +855,6 @@
     }
     
     console.log('✅ Сайт загружен. Картинки должны быть в папке images/');
-    console.log('📁 Структура: ваш-репозиторий/images/файлы.png');
 </script>
 </body>
 </html>
